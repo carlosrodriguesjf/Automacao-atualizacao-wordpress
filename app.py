@@ -87,13 +87,6 @@ pyautogui.hotkey('del')
 sleep(2)
 
 
-# ler arquivo com atualização
-
-with open('pagina_alterada.txt','r',newline='',encoding='utf-8') as arquivo_codigo:
-    for linha_codigo in arquivo_codigo:
-        lista_codigo.append(linha_codigo)
-
-
 # clicar na area de codigo
 
 pyautogui.click(814,795, duration=2)
@@ -101,9 +94,18 @@ sleep(2)
 
 
 
+# ler arquivo com atualização
+
+with open('pagina_alterada.txt','r',newline='',encoding='utf-8') as arquivo_codigo:
+    for linha_codigo in arquivo_codigo:
+        lista_codigo.append(linha_codigo)
+
+
+
+
+
 # colar arquivo com a atualização
 
-pyautogui.write(lista_codigo)
 
 #clicar em atualizar
 
