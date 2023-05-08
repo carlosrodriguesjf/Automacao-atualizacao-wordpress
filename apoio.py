@@ -1,4 +1,26 @@
-Nessa página serão listados os formulários eletrônicos e em PDF para quando é necessário assinatura do requerente. Consulte nossa página <a href="https://www2.ufjf.br/cat/servicos/">Serviços</a> para conhecer os atendimentos realizados.
+import pyautogui
+import pyperclip
+import webbrowser
+from time import sleep
+
+# constantes
+
+lista = []
+lista_codigo = []
+
+def escrever_texto(codigo):
+    pyperclip.copy(codigo)
+    pyautogui.hotkey('ctrl','v')
+
+
+# clicar na area de codigo
+
+pyautogui.click(621,661, duration=2)
+sleep(2)
+
+
+# ler arquivo com atualização
+codigo ="""Nessa página serão listados os formulários eletrônicos e em PDF para quando é necessário assinatura do requerente. Consulte nossa página <a href="https://www2.ufjf.br/cat/servicos/">Serviços</a> para conhecer os atendimentos realizados.
 
 Para o preenchimento, deverá inicialmente ser realizado o login com uma conta Google, preferencialmente usando o e-mail institucional do respondente, sendo permitidos os domínios @ufjf.br, @estudante.ufjf.br e @visitante.ufjf.br.
 <ul style="margin-left: 0">
@@ -40,4 +62,12 @@ Confira as orientações de cada pedido na página <a href="https://www2.ufjf.br
  	<li><a href="https://www2.ufjf.br/cat/formularios/termo-de-concordancia-e-veracidade-para-liberacao-de-usuario-externo-sei-ufjf/">Termo de Concordância e Veracidade para Liberação de Usuario Externo SEI UFJF</a></li>
  	<li><a href="https://www2.ufjf.br/cat/wp-content/uploads/sites/19/2022/11/Trancamento-Excepcional-de-Curso-não-saúde-v011122.pdf">Trancamento Excepcional de Curso (não saúde)</a></li>
  	<li><a href="https://www2.ufjf.br/cat/wp-content/uploads/sites/19/2022/11/Transferencia-Obrigatoria-v011122.pdf" target="_blank" rel="noopener">Transferência de Aceitação Obrigatória (ex-officio)</a></li>
-</ul>
+</ul>"""
+
+
+escrever_texto(codigo)
+
+
+
+
+

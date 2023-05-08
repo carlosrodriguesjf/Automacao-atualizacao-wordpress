@@ -1,0 +1,63 @@
+# # acesso ao siga
+
+# sleep(2)
+# pyautogui.click(382,412,duration=2)
+# pyautogui.write(lista[0])
+
+# sleep(1)
+# pyautogui.click(515,488,duration=2)
+# pyautogui.write(lista[1])
+
+# pyautogui.click(619,589, duration=2)
+# sleep(2)
+
+# # clicar em sites
+
+# pyautogui.click(1087,251, duration=2)
+# sleep(2)
+
+# # clicar em meus sites
+
+# pyautogui.click(64,243, duration=2)
+# sleep(2)
+
+# # clicar no site central de atendimento JF
+
+# pyautogui.click(67,291, duration=2)
+# sleep(2)
+
+
+# # mover para paginas
+
+# pyautogui.moveTo(53,346, duration=2)
+# sleep(2)
+
+# # clicar em todas as paginas
+
+# pyautogui.click(207,346, duration=2)
+# sleep(2)
+
+# # clicar duas vezes na página de rolagem
+
+# pyautogui.doubleClick(1908,995, duration=2)
+# sleep(2)
+
+# # clicar em Formularios
+
+# pyautogui.click(254,715, duration=2)
+# sleep(2)
+
+# # clicar na area de codigo
+
+# pyautogui.click(730,853, duration=2)
+# sleep(2)
+
+# # apertar control + A
+
+# pyautogui.hotkey('ctrl','a')
+# sleep(2)
+
+# # apertar delete
+
+# pyautogui.hotkey('del')
+# sleep(2)

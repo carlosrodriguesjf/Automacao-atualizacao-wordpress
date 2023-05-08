@@ -1,4 +1,36 @@
-Nessa página serão listados os formulários eletrônicos e em PDF para quando é necessário assinatura do requerente. Consulte nossa página <a href="https://www2.ufjf.br/cat/servicos/">Serviços</a> para conhecer os atendimentos realizados.
+import pyautogui
+import pyperclip
+import webbrowser
+from time import sleep
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
+
+def iniciar_driver():
+    chrome_options = Options()
+    arguments = ['--lang=pt-BR', '--window-size=1920,1080', '--incognito']
+    for argument in arguments:
+        chrome_options.add_argument(argument)
+
+    chrome_options.add_experimental_option('prefs', {
+        'download.prompt_for_download': False,
+        'profile.default_content_setting_values.notifications': 2,
+        'profile.default_content_setting_values.automatic_downloads': 1,
+
+    })
+    driver = webdriver.Chrome(service=ChromeService(
+        ChromeDriverManager().install()), options=chrome_options)
+
+    return driver
+
+driver = iniciar_driver()
+driver.get('https://www2.ufjf.br/cat/wp-admin/post-new.php?post_type=page')
+driver.maximize_window()
+
+texto = """Nessa página serão listados os formulários eletrônicos e em PDF para quando é necessário assinatura do requerente. Consulte nossa página <a href="https://www2.ufjf.br/cat/servicos/">Serviços</a> para conhecer os atendimentos realizados.
 
 Para o preenchimento, deverá inicialmente ser realizado o login com uma conta Google, preferencialmente usando o e-mail institucional do respondente, sendo permitidos os domínios @ufjf.br, @estudante.ufjf.br e @visitante.ufjf.br.
 <ul style="margin-left: 0">
@@ -40,4 +72,44 @@ Confira as orientações de cada pedido na página <a href="https://www2.ufjf.br
  	<li><a href="https://www2.ufjf.br/cat/formularios/termo-de-concordancia-e-veracidade-para-liberacao-de-usuario-externo-sei-ufjf/">Termo de Concordância e Veracidade para Liberação de Usuario Externo SEI UFJF</a></li>
  	<li><a href="https://www2.ufjf.br/cat/wp-content/uploads/sites/19/2022/11/Trancamento-Excepcional-de-Curso-não-saúde-v011122.pdf">Trancamento Excepcional de Curso (não saúde)</a></li>
  	<li><a href="https://www2.ufjf.br/cat/wp-content/uploads/sites/19/2022/11/Transferencia-Obrigatoria-v011122.pdf" target="_blank" rel="noopener">Transferência de Aceitação Obrigatória (ex-officio)</a></li>
-</ul>
+</ul>"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+textarea = driver.find_element(By.XPATH,"//div/textarea[@id='content']")
+textarea.sendkeys(texto)
+
+
+# constantes
+
+lista = []
+lista_codigo = []
+
+
+
+# clicar na area de codigo
+
+# pyautogui.click(730,853, duration=2)
+# sleep(2)
+
+
+# ler arquivo com atualização
+
+
+
+
+input('digite algo para fechar... ')
