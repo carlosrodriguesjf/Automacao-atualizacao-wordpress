@@ -1,4 +1,108 @@
-Nessa página serão listados os formulários eletrônicos e em PDF para quando é necessário assinatura do requerente. Consulte nossa página <a href="https://www2.ufjf.br/cat/servicos/">Serviços</a> para conhecer os atendimentos realizados.
+# PROJETO AUTOMAÇÃO DA ATUALIZAÇÃO DO WORDPRESS
+
+import pyautogui
+import pyperclip
+import webbrowser
+from time import sleep
+
+# constantes
+
+lista = []
+lista_codigo = []
+
+def escrever_texto(codigo):
+    pyperclip.copy(codigo)
+    pyautogui.hotkey('ctrl','v')
+
+
+# acessar o siga e mudar de páginas
+
+webbrowser.open('https://siga.ufjf.br')
+
+# leitura dos arquivos com login e senha
+
+with open('login_siga.txt','r',newline='',encoding='utf-8') as arquivo:
+    for linha in arquivo:
+        lista.append(linha)
+
+
+
+
+# acesso ao siga
+
+sleep(2)
+pyautogui.click(382,412,duration=2)
+pyautogui.write(lista[0])
+
+sleep(1)
+pyautogui.click(515,488,duration=2)
+pyautogui.write(lista[1])
+
+pyautogui.click(619,589, duration=2)
+sleep(2)
+
+# clicar em sites
+
+pyautogui.click(1087,251, duration=2)
+sleep(2)
+
+# clicar em meus sites
+
+pyautogui.click(64,243, duration=2)
+sleep(2)
+
+# clicar no site central de atendimento JF
+
+pyautogui.click(67,291, duration=2)
+sleep(2)
+
+
+# mover para paginas
+
+pyautogui.moveTo(53,346, duration=2)
+sleep(2)
+
+# clicar em todas as paginas
+
+pyautogui.click(207,346, duration=2)
+sleep(2)
+
+# clicar duas vezes na página de rolagem
+
+pyautogui.doubleClick(1908,995, duration=2)
+sleep(2)
+
+# clicar em Formularios
+
+pyautogui.click(254,715, duration=2)
+sleep(2)
+
+# clicar na area de codigo
+
+pyautogui.click(730,853, duration=2)
+sleep(2)
+
+# apertar control + A
+
+pyautogui.hotkey('ctrl','a')
+sleep(2)
+
+# apertar delete
+
+pyautogui.hotkey('del')
+sleep(2)
+
+
+
+# clicar na area de codigo
+
+pyautogui.click(814,795, duration=2)
+sleep(2)
+
+
+
+# ler arquivo com atualização
+codigo ="""Nessa página serão listados os formulários eletrônicos e em PDF para quando é necessário assinatura do requerente. Consulte nossa página <a href="https://www2.ufjf.br/cat/servicos/">Serviços</a> para conhecer os atendimentos realizados.
 
 Para o preenchimento, deverá inicialmente ser realizado o login com uma conta Google, preferencialmente usando o e-mail institucional do respondente, sendo permitidos os domínios @ufjf.br, @estudante.ufjf.br e @visitante.ufjf.br.
 <ul style="margin-left: 0">
@@ -40,4 +144,15 @@ Confira as orientações de cada pedido na página <a href="https://www2.ufjf.br
  	<li><a href="https://www2.ufjf.br/cat/formularios/termo-de-concordancia-e-veracidade-para-liberacao-de-usuario-externo-sei-ufjf/">Termo de Concordância e Veracidade para Liberação de Usuario Externo SEI UFJF</a></li>
  	<li><a href="https://www2.ufjf.br/cat/wp-content/uploads/sites/19/2022/11/Trancamento-Excepcional-de-Curso-não-saúde-v011122.pdf">Trancamento Excepcional de Curso (não saúde)</a></li>
  	<li><a href="https://www2.ufjf.br/cat/wp-content/uploads/sites/19/2022/11/Transferencia-Obrigatoria-v011122.pdf" target="_blank" rel="noopener">Transferência de Aceitação Obrigatória (ex-officio)</a></li>
-</ul>
+</ul>"""
+
+
+escrever_texto(codigo)
+
+
+# Clicar em atualizar
+
+
+
+
+# # agendar a automatizacao
